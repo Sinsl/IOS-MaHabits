@@ -48,11 +48,11 @@ class HabitsViewController: UIViewController, HabitsViewControllerDelegate {
     }
     
     @objc func openInfo() {
-//        let habitViewController = HabitViewController()
-//        let habitNavContr = UINavigationController (rootViewController: habitViewController)
-//        habitViewController.title = "Создать"
-//        habitViewController.delegateHabits = self
-//        present(habitNavContr, animated: true, completion: nil)
+        let habitViewController = HabitViewController()
+        let habitNavContr = UINavigationController (rootViewController: habitViewController)
+        habitViewController.title = "Создать"
+        habitViewController.delegateHabits = self
+        present(habitNavContr, animated: true, completion: nil)
     }
     
     func setLayout() {
@@ -121,9 +121,9 @@ extension HabitsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1{
-//            let habitDetailsViewController = HabitDetailsViewController()
-//            habitDetailsViewController.habit = HabitsStore.shared.habits[indexPath.item]
-//            self.navigationController?.pushViewController(habitDetailsViewController, animated: false)
+            let habitDetailsViewController = HabitDetailsViewController()
+            habitDetailsViewController.habit = HabitsStore.shared.habits[indexPath.item]
+            self.navigationController?.pushViewController(habitDetailsViewController, animated: false)
         }
     }
 }
