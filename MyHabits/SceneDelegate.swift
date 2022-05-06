@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let tabBarController = UITabBarController()
         UITabBar.appearance().isTranslucent = false
-        UITabBar.appearance().backgroundColor = .systemGray6
+        UITabBar.appearance().barTintColor = .systemGray6
         tabBarController.viewControllers = [createHabitsViewController(), createInfoViewController()]
     return tabBarController
 
