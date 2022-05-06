@@ -54,7 +54,7 @@ class HabitsViewController: UIViewController, HabitsViewControllerDelegate {
         habitViewController.delegateHabits = self
         present(habitNavContr, animated: true, completion: nil)
     }
-    
+ 
     func setLayout() {
         view.addSubview(collectionView)
         
