@@ -10,9 +10,11 @@
 		F4F632942825108200373B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632932825108200373B2B /* AppDelegate.swift */; };
 		F4F632962825108200373B2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632952825108200373B2B /* SceneDelegate.swift */; };
 		F4F632982825108200373B2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632972825108200373B2B /* ViewController.swift */; };
-		F4F6329B2825108200373B2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F632992825108200373B2B /* Main.storyboard */; };
 		F4F6329D2825108900373B2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F6329C2825108900373B2B /* Assets.xcassets */; };
 		F4F632A02825108900373B2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F6329E2825108900373B2B /* LaunchScreen.storyboard */; };
+		F4F632AC2825149300373B2B /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632AB2825149300373B2B /* HabitsViewController.swift */; };
+		F4F632AF282514D600373B2B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632AE282514D600373B2B /* InfoViewController.swift */; };
+		F4F632B3282519E500373B2B /* ExtensionAppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632B2282519E500373B2B /* ExtensionAppColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +22,12 @@
 		F4F632932825108200373B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F632952825108200373B2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F4F632972825108200373B2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F4F6329A2825108200373B2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4F6329C2825108900373B2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4F6329F2825108900373B2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4F632A12825108900373B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4F632AB2825149300373B2B /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		F4F632AE282514D600373B2B /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		F4F632B2282519E500373B2B /* ExtensionAppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAppColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +62,10 @@
 			children = (
 				F4F632932825108200373B2B /* AppDelegate.swift */,
 				F4F632952825108200373B2B /* SceneDelegate.swift */,
+				F4F632B2282519E500373B2B /* ExtensionAppColor.swift */,
+				F4F632AE282514D600373B2B /* InfoViewController.swift */,
+				F4F632AB2825149300373B2B /* HabitsViewController.swift */,
 				F4F632972825108200373B2B /* ViewController.swift */,
-				F4F632992825108200373B2B /* Main.storyboard */,
 				F4F6329C2825108900373B2B /* Assets.xcassets */,
 				F4F6329E2825108900373B2B /* LaunchScreen.storyboard */,
 				F4F632A12825108900373B2B /* Info.plist */,
@@ -126,7 +132,6 @@
 			files = (
 				F4F632A02825108900373B2B /* LaunchScreen.storyboard in Resources */,
 				F4F6329D2825108900373B2B /* Assets.xcassets in Resources */,
-				F4F6329B2825108200373B2B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,20 +145,15 @@
 				F4F632982825108200373B2B /* ViewController.swift in Sources */,
 				F4F632942825108200373B2B /* AppDelegate.swift in Sources */,
 				F4F632962825108200373B2B /* SceneDelegate.swift in Sources */,
+				F4F632AC2825149300373B2B /* HabitsViewController.swift in Sources */,
+				F4F632AF282514D600373B2B /* InfoViewController.swift in Sources */,
+				F4F632B3282519E500373B2B /* ExtensionAppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F4F632992825108200373B2B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F4F6329A2825108200373B2B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F4F6329E2825108900373B2B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
