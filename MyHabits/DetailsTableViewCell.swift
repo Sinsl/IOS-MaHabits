@@ -9,7 +9,7 @@ import UIKit
 
 class DetailsTableViewCell: UITableViewCell {
 
-    lazy var baseView: UIView = {
+    private lazy var baseView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 8
@@ -17,7 +17,7 @@ class DetailsTableViewCell: UITableViewCell {
         return view
     }()
     
-    lazy var labelDate: UILabel = {
+    private lazy var labelDate: UILabel = {
         let label  = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
@@ -26,7 +26,7 @@ class DetailsTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var imageChecken: UIImageView = {
+    private lazy var imageChecken: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .white
         image.tintColor = .black
@@ -54,6 +54,7 @@ class DetailsTableViewCell: UITableViewCell {
             baseView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             baseView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+        
         [labelDate, imageChecken].forEach{baseView.addSubview($0)}
         NSLayoutConstraint.activate([
             labelDate.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 10),
@@ -61,6 +62,7 @@ class DetailsTableViewCell: UITableViewCell {
             labelDate.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 16),
             labelDate.heightAnchor.constraint(equalToConstant: 30)
         ])
+        
         NSLayoutConstraint.activate([
             imageChecken.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 15),
             imageChecken.trailingAnchor.constraint(equalTo: baseView.trailingAnchor, constant: -20),
@@ -73,5 +75,4 @@ class DetailsTableViewCell: UITableViewCell {
         labelDate.text = date
         if isTracking {imageChecken.image = UIImage(systemName: "checkmark")}
     }
-
 }

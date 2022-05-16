@@ -13,7 +13,7 @@ protocol HabitsViewControllerDelegate: class {
 
 class HabitsViewController: UIViewController, HabitsViewControllerDelegate {
     
-    var changeHabits: String? = nil {
+    private var changeHabits: String? = nil {
         didSet {
             if changeHabits != nil {
                 self.reloadCollection()
@@ -21,7 +21,7 @@ class HabitsViewController: UIViewController, HabitsViewControllerDelegate {
         }
     }
     
-    lazy var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -43,8 +43,6 @@ class HabitsViewController: UIViewController, HabitsViewControllerDelegate {
         let info = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(openInfo))
         navigationItem.rightBarButtonItem = info
         setLayout()
-        
-        
     }
     
     @objc func openInfo() {
@@ -57,7 +55,6 @@ class HabitsViewController: UIViewController, HabitsViewControllerDelegate {
  
     func setLayout() {
         view.addSubview(collectionView)
-        
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

@@ -9,13 +9,14 @@ import UIKit
 
 class ProgressBarCollectionViewCell: UICollectionViewCell {
     
-    lazy var baseView: UIView = {
+    private lazy var baseView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 8
         view.backgroundColor = .white
         return view
     }()
+    
     private let labelSlogan: UILabel = {
         let label  = UILabel()
         label.text = "Все получится!"
@@ -34,7 +35,7 @@ class ProgressBarCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var progressView: UIProgressView = {
+    private lazy var progressView: UIProgressView = {
         let view = UIProgressView()
         view.progressTintColor = AppColor(color: .purple)
         view.progressViewStyle = .bar
@@ -70,10 +71,12 @@ class ProgressBarCollectionViewCell: UICollectionViewCell {
             labelSlogan.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 10),
             labelSlogan.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 12)
         ])
+        
         NSLayoutConstraint.activate([
             labelProgress.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 10),
             labelProgress.trailingAnchor.constraint(equalTo: baseView.trailingAnchor, constant: -12)
         ])
+        
         NSLayoutConstraint.activate([
             progressView.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 12),
             progressView.topAnchor.constraint(equalTo: labelSlogan.bottomAnchor, constant: 8),
@@ -82,6 +85,7 @@ class ProgressBarCollectionViewCell: UICollectionViewCell {
         ])
         
     }
+    
     func setupCell(_ valueProgress: Float){
         labelProgress.text = "\(Int(valueProgress * 100))%"
         progressView.setProgress(valueProgress, animated: true)

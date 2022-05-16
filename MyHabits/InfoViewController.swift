@@ -47,6 +47,7 @@ class InfoViewController: UIViewController {
         self.view.backgroundColor = .white
         setLayout()
     }
+    
     private func setLayout() {
         
         self.view.addSubview(scrollView)
@@ -72,6 +73,7 @@ class InfoViewController: UIViewController {
             titleInfo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             titleInfo.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
         ])
+        
         contentView.addSubview(textInfo)
         NSLayoutConstraint.activate([
             textInfo.topAnchor.constraint(equalTo: titleInfo.bottomAnchor, constant: 16),

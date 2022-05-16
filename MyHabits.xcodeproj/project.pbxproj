@@ -78,14 +78,6 @@
 			name = DetailsScreen;
 			sourceTree = "<group>";
 		};
-		F4A7825128325571005198E7 /* StoreFiles */ = {
-			isa = PBXGroup;
-			children = (
-				F4F632B9282524DA00373B2B /* HabitsStore.swift */,
-			);
-			path = StoreFiles;
-			sourceTree = "<group>";
-		};
 		F4A7825228325594005198E7 /* InfoScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,14 +113,14 @@
 		F4F632922825108200373B2B /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
+				F4A7824D283254AA005198E7 /* HabitsScreen */,
+				F4A7824F28325504005198E7 /* DetailsScreen */,
 				F4A78253283255B2005198E7 /* HabitScreen */,
 				F4A7825228325594005198E7 /* InfoScreen */,
-				F4A7825128325571005198E7 /* StoreFiles */,
-				F4A7824F28325504005198E7 /* DetailsScreen */,
 				F4A7824E283254D3005198E7 /* Extension */,
-				F4A7824D283254AA005198E7 /* HabitsScreen */,
 				F4F632932825108200373B2B /* AppDelegate.swift */,
 				F4F632952825108200373B2B /* SceneDelegate.swift */,
+				F4F632B9282524DA00373B2B /* HabitsStore.swift */,
 				F4F6329C2825108900373B2B /* Assets.xcassets */,
 				F4F6329E2825108900373B2B /* LaunchScreen.storyboard */,
 				F4F632A12825108900373B2B /* Info.plist */,

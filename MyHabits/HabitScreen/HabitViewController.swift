@@ -43,7 +43,7 @@ class HabitViewController: UIViewController {
         return label
     }()
 
-    lazy var textFieldNameHabit: UITextField = {
+    private lazy var textFieldNameHabit: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Бегать по утрам, спать по 8 часов и т.д."
@@ -68,7 +68,7 @@ class HabitViewController: UIViewController {
         return label
     }()
 
-    lazy var colorView: UIView = {
+    private lazy var colorView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 15
@@ -95,7 +95,7 @@ class HabitViewController: UIViewController {
         return label
     }()
 
-    lazy var textFieldTime: UITextField = {
+    private lazy var textFieldTime: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.text = self.timeText
@@ -107,7 +107,7 @@ class HabitViewController: UIViewController {
         return textField
     }()
 
-    lazy var timePicker: UIDatePicker = {
+    private lazy var timePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.translatesAutoresizingMaskIntoConstraints = false
         picker.datePickerMode = .time
@@ -118,7 +118,7 @@ class HabitViewController: UIViewController {
         return picker
     }()
     
-    lazy var buttonDelete: UIButton = {
+    private lazy var buttonDelete: UIButton = {
        let button = UIButton()
         button.setTitle("Удалить привычку", for: .normal)
         button.setTitleColor(.red, for: .normal)
@@ -239,7 +239,6 @@ class HabitViewController: UIViewController {
         timeText = dateformatter.string(from: timePicker.date)
     }
    
-    
     private func setLayout() {
         view.addSubview(scrollView)
         view.addSubview(buttonDelete)
@@ -248,6 +247,7 @@ class HabitViewController: UIViewController {
         if device == 1 {
             insetButtom = 70
         }
+        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -266,37 +266,44 @@ class HabitViewController: UIViewController {
         ])
         
         [textFieldNameHabit, labelNameHabil, labelColor, colorView, labelTime, labelTextTime, textFieldTime, timePicker].forEach{baseView.addSubview($0)}
+        
         NSLayoutConstraint.activate([
             labelNameHabil.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 16),
             labelNameHabil.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 21),
             labelNameHabil.trailingAnchor.constraint(equalTo: baseView.trailingAnchor, constant: -16)
         ])
+        
         NSLayoutConstraint.activate([
             textFieldNameHabit.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 16),
             textFieldNameHabit.topAnchor.constraint(equalTo: labelNameHabil.bottomAnchor, constant: 7),
             textFieldNameHabit.trailingAnchor.constraint(equalTo: baseView.trailingAnchor, constant: -16),
             textFieldNameHabit.heightAnchor.constraint(equalToConstant: 20)
         ])
+        
         NSLayoutConstraint.activate([
             labelColor.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 16),
             labelColor.topAnchor.constraint(equalTo: textFieldNameHabit.bottomAnchor, constant: 21),
             labelColor.trailingAnchor.constraint(equalTo: baseView.trailingAnchor, constant: -16)
         ])
+        
         NSLayoutConstraint.activate([
             colorView.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 16),
             colorView.topAnchor.constraint(equalTo: labelColor.bottomAnchor, constant: 7),
             colorView.widthAnchor.constraint(equalToConstant: 30),
             colorView.heightAnchor.constraint(equalToConstant: 30)
         ])
+        
         NSLayoutConstraint.activate([
             labelTime.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 16),
             labelTime.topAnchor.constraint(equalTo: colorView.bottomAnchor, constant: 21),
             labelTime.trailingAnchor.constraint(equalTo: baseView.trailingAnchor, constant: -16)
         ])
+        
         NSLayoutConstraint.activate([
             labelTextTime.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 16),
             labelTextTime.topAnchor.constraint(equalTo: labelTime.bottomAnchor, constant: 7)
         ])
+        
         NSLayoutConstraint.activate([
             textFieldTime.leadingAnchor.constraint(equalTo: labelTextTime.trailingAnchor, constant: 8),
             textFieldTime.topAnchor.constraint(equalTo: labelTime.bottomAnchor, constant: 7),
@@ -321,7 +328,6 @@ class HabitViewController: UIViewController {
             buttonDelete.isHidden = true
         }
     }
-    
 }
 extension HabitViewController: UIColorPickerViewControllerDelegate {
 //    func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {

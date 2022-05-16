@@ -13,7 +13,7 @@ protocol HabitDetailsViewControllerDelegate: class {
 
 class HabitDetailsViewController: UIViewController, HabitDetailsViewControllerDelegate {
     
-    var changeDetail: String? = nil {
+    private var changeDetail: String? = nil {
         didSet {
             if changeDetail != nil {
                 closeController()
@@ -34,14 +34,14 @@ class HabitDetailsViewController: UIViewController, HabitDetailsViewControllerDe
     }()
     
     
-    let headerView: UIView = {
+    private let headerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemGray6
         view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
         return view
     }()
     
-    lazy var textHeader: UILabel = {
+    private lazy var textHeader: UILabel = {
         let label  = UILabel()
         label.text = "Активность"
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
@@ -100,6 +100,7 @@ class HabitDetailsViewController: UIViewController, HabitDetailsViewControllerDe
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+        
         headerView.addSubview(textHeader)
         NSLayoutConstraint.activate([
             textHeader.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 22),
@@ -107,7 +108,6 @@ class HabitDetailsViewController: UIViewController, HabitDetailsViewControllerDe
             textHeader.trailingAnchor.constraint(equalTo: headerView.trailingAnchor,constant: -16)
         ])
     }
-    
 }
 
 extension HabitDetailsViewController: UITableViewDataSource {

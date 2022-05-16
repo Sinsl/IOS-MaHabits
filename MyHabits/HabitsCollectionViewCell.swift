@@ -9,7 +9,7 @@ import UIKit
 
 class HabitsCollectionViewCell: UICollectionViewCell {
     
-    lazy var baseView: UIView = {
+    private lazy var baseView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 8
@@ -38,6 +38,7 @@ class HabitsCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 2
         return label
     }()
+    
     private let labelTextTime: UILabel = {
         let label  = UILabel()
         label.text = "Каждый день в 7:30"
@@ -75,6 +76,7 @@ class HabitsCollectionViewCell: UICollectionViewCell {
             baseView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             baseView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+        
         [buttonCheck, labelNameHabit, labelTextTime, labelCounter].forEach{baseView.addSubview($0)}
         NSLayoutConstraint.activate([
             buttonCheck.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 46),
@@ -82,18 +84,21 @@ class HabitsCollectionViewCell: UICollectionViewCell {
             buttonCheck.widthAnchor.constraint(equalToConstant: 40),
             buttonCheck.heightAnchor.constraint(equalToConstant: 40)
         ])
+        
         NSLayoutConstraint.activate([
             labelNameHabit.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 20),
             labelNameHabit.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 20),
 //            labelNameHabit.trailingAnchor.constraint(equalTo: checkedView.leadingAnchor, constant: -40)
             labelNameHabit.trailingAnchor.constraint(equalTo: baseView.trailingAnchor, constant: -100)
         ])
+        
         NSLayoutConstraint.activate([
             labelTextTime.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 20),
             labelTextTime.topAnchor.constraint(equalTo: labelNameHabit.bottomAnchor, constant: 8),
 //            labelTextTime.trailingAnchor.constraint(equalTo: checkedView.leadingAnchor, constant: -40)
             labelTextTime.trailingAnchor.constraint(equalTo: baseView.trailingAnchor, constant: -100)
         ])
+        
         NSLayoutConstraint.activate([
             labelCounter.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 20),
             labelCounter.bottomAnchor.constraint(equalTo: baseView.bottomAnchor, constant: -20),
