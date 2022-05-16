@@ -78,6 +78,7 @@ class HabitsCollectionViewCell: UICollectionViewCell {
         ])
         
         [buttonCheck, labelNameHabit, labelTextTime, labelCounter].forEach{baseView.addSubview($0)}
+        
         NSLayoutConstraint.activate([
             buttonCheck.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 46),
             buttonCheck.trailingAnchor.constraint(equalTo: baseView.trailingAnchor, constant: -25),
@@ -106,7 +107,7 @@ class HabitsCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func setupCell(_ title: String, _ time: String, _ counter: String, _ color: UIColor, _ checked: Bool){
+    func setupCell(_ title: String, _ time: String, _ counter: String, _ color: UIColor, _ checked: Bool) {
             labelNameHabit.text = title
             labelNameHabit.textColor = color
             labelTextTime.text = time
@@ -120,6 +121,4 @@ class HabitsCollectionViewCell: UICollectionViewCell {
             buttonCheck.backgroundColor = .white
         }
     }
-    
-    
 }

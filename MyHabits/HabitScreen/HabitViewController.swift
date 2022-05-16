@@ -141,7 +141,7 @@ class HabitViewController: UIViewController {
         setLayout()
     }
     
-    private func setValue(){
+    private func setValue() {
         if habit != nil {
             textNameHabit = habit!.name
             timeText = habit!.dateString

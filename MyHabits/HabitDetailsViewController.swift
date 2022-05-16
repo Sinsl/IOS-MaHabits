@@ -94,6 +94,7 @@ class HabitDetailsViewController: UIViewController, HabitDetailsViewControllerDe
     
     private func setLayout() {
         view.addSubview(tableView)
+        
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -102,6 +103,7 @@ class HabitDetailsViewController: UIViewController, HabitDetailsViewControllerDe
         ])
         
         headerView.addSubview(textHeader)
+        
         NSLayoutConstraint.activate([
             textHeader.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 22),
             textHeader.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),

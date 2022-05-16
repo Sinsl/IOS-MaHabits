@@ -67,6 +67,7 @@ class ProgressBarCollectionViewCell: UICollectionViewCell {
         ])
         
         [labelSlogan, labelProgress, progressView].forEach{baseView.addSubview($0)}
+        
         NSLayoutConstraint.activate([
             labelSlogan.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 10),
             labelSlogan.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 12)
@@ -83,10 +84,9 @@ class ProgressBarCollectionViewCell: UICollectionViewCell {
             progressView.trailingAnchor.constraint(equalTo: baseView.trailingAnchor, constant: -12),
             progressView.heightAnchor.constraint(equalToConstant: 7)
         ])
-        
     }
     
-    func setupCell(_ valueProgress: Float){
+    func setupCell(_ valueProgress: Float) {
         labelProgress.text = "\(Int(valueProgress * 100))%"
         progressView.setProgress(valueProgress, animated: true)
     }

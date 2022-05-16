@@ -56,6 +56,7 @@ class DetailsTableViewCell: UITableViewCell {
         ])
         
         [labelDate, imageChecken].forEach{baseView.addSubview($0)}
+        
         NSLayoutConstraint.activate([
             labelDate.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 10),
             labelDate.trailingAnchor.constraint(equalTo: imageChecken.leadingAnchor, constant: -25),
@@ -71,7 +72,7 @@ class DetailsTableViewCell: UITableViewCell {
         ])
     }
 
-    func settingValues(_ date: String, _ isTracking: Bool){
+    func settingValues(_ date: String, _ isTracking: Bool) {
         labelDate.text = date
         if isTracking {imageChecken.image = UIImage(systemName: "checkmark")}
     }
