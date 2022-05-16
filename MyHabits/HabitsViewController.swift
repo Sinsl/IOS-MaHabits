@@ -28,8 +28,8 @@ class HabitsViewController: UIViewController, HabitsViewControllerDelegate {
         view.backgroundColor = .systemGray5
         view.dataSource = self
         view.delegate = self
-        view.register(HabitsCollectionViewCell.self, forCellWithReuseIdentifier: "HabitsCollectionViewCell")
-        view.register(ProgressBarCollectionViewCell.self, forCellWithReuseIdentifier: "ProgressBarCollectionViewCell")
+        view.register(HabitsCollectionViewCell.self, forCellWithReuseIdentifier: HabitsCollectionViewCell.identifier)
+        view.register(ProgressBarCollectionViewCell.self, forCellWithReuseIdentifier: ProgressBarCollectionViewCell.identifier)
         return view
     }()
     
@@ -98,12 +98,12 @@ extension HabitsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProgressBarCollectionViewCell", for: indexPath) as! ProgressBarCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressBarCollectionViewCell.identifier, for: indexPath) as! ProgressBarCollectionViewCell
             let todayProgress =  HabitsStore.shared.todayProgress
             cell.setupCell(todayProgress)
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HabitsCollectionViewCell", for: indexPath) as! HabitsCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabitsCollectionViewCell.identifier, for: indexPath) as! HabitsCollectionViewCell
             let title: String = HabitsStore.shared.habits[indexPath.item].name
             let time: String = HabitsStore.shared.habits[indexPath.item].dateString
             let counter: String = "Счетчик: \(String(HabitsStore.shared.habits[indexPath.item].trackDates.count))"

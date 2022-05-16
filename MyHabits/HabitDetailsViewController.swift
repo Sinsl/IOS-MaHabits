@@ -29,7 +29,7 @@ class HabitDetailsViewController: UIViewController, HabitDetailsViewControllerDe
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(DetailsTableViewCell.self, forCellReuseIdentifier: "DetailsTableViewCell")
+        tableView.register(DetailsTableViewCell.self, forCellReuseIdentifier: DetailsTableViewCell.identifier)
         return tableView
     }()
     
@@ -117,7 +117,7 @@ extension HabitDetailsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableViewCell", for: indexPath) as! DetailsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: DetailsTableViewCell.identifier, for: indexPath) as! DetailsTableViewCell
         let date = datesRevers[indexPath.row]
         let textDate = dateFormatter.string(from: date)
         let isTracking = HabitsStore.shared.habit(habit!, isTrackedIn: date)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4A7825928326D94005198E7 /* ExtensionIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A7825828326D94005198E7 /* ExtensionIdentifier.swift */; };
 		F4F632942825108200373B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632932825108200373B2B /* AppDelegate.swift */; };
 		F4F632962825108200373B2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632952825108200373B2B /* SceneDelegate.swift */; };
 		F4F6329D2825108900373B2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F6329C2825108900373B2B /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4A7825828326D94005198E7 /* ExtensionIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionIdentifier.swift; sourceTree = "<group>"; };
 		F4F632902825108200373B2B /* MyHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F632932825108200373B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F632952825108200373B2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				F4F632B2282519E500373B2B /* ExtensionAppColor.swift */,
+				F4A7825828326D94005198E7 /* ExtensionIdentifier.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A7825928326D94005198E7 /* ExtensionIdentifier.swift in Sources */,
 				F4F632B72825244F00373B2B /* HabitsCollectionViewCell.swift in Sources */,
 				F4F632942825108200373B2B /* AppDelegate.swift in Sources */,
 				F4F632962825108200373B2B /* SceneDelegate.swift in Sources */,
