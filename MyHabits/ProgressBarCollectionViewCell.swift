@@ -9,6 +9,8 @@ import UIKit
 
 class ProgressBarCollectionViewCell: UICollectionViewCell {
     
+    static let identifier = String(describing: ProgressBarCollectionViewCell.self)
+    
     private lazy var baseView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false

@@ -8,7 +8,9 @@
 import UIKit
 
 class DetailsTableViewCell: UITableViewCell {
-
+    
+    static let identifier = String(describing: DetailsTableViewCell.self)
+    
     private lazy var baseView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
