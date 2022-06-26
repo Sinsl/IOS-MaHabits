@@ -15,9 +15,11 @@ class HabitViewController: UIViewController {
     var habit: Habit? = nil
     
     private var textNameHabit: String = ""
-    private var timeText: String = "11:00 PM"
+    private var timeText: String = ""
     private var date: Date = Date()
     private var color = UIColor.blue
+    
+    private let nc = NotificationCenter.default
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -95,15 +97,14 @@ class HabitViewController: UIViewController {
         return label
     }()
 
-    private lazy var textFieldTime: UITextField = {
-        let textField = UITextField()
+    private lazy var textFieldTime: UILabel = {
+        let textField = UILabel()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.text = self.timeText
         textField.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         textField.textColor = AppColor(color: .purple)
         textField.backgroundColor = .white
         textField.layer.masksToBounds = true
-        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.top
         return textField
     }()
 
@@ -112,6 +113,7 @@ class HabitViewController: UIViewController {
         picker.translatesAutoresizingMaskIntoConstraints = false
         picker.datePickerMode = .time
         picker.preferredDatePickerStyle = .wheels
+        picker.date = self.date
         picker.sizeToFit()
         picker.addTarget(self, action: #selector(setTime), for: UIControl.Event.valueChanged)
 
@@ -131,7 +133,8 @@ class HabitViewController: UIViewController {
     }()
     
     private let device = UIDevice.current.userInterfaceIdiom.rawValue
-
+    private var kbdDismissTapGesture: UIGestureRecognizer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -144,7 +147,6 @@ class HabitViewController: UIViewController {
     private func setValue() {
         if habit != nil {
             textNameHabit = habit!.name
-            timeText = habit!.dateString
             date = habit!.date
             color = habit!.color
         }
@@ -164,6 +166,7 @@ class HabitViewController: UIViewController {
     }
     
     @objc func saveButton() {
+        setValueNameHabit()
         let newHabit = Habit(name: textNameHabit,
                              date: self.date,
                              color: self.color)
@@ -182,6 +185,10 @@ class HabitViewController: UIViewController {
     }
 
     @objc func setNameHabit() {
+        setValueNameHabit()
+    }
+    
+    private func setValueNameHabit() {
         if textFieldNameHabit.text == "" {
             textNameHabit = "Название не введено"
         } else {
@@ -218,6 +225,35 @@ class HabitViewController: UIViewController {
         setTapGesture()
         setTime()
     }
+     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        nc.addObserver(self, selector: #selector(kbdWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        nc.addObserver(self, selector: #selector(kbdWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        nc.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        nc.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func kbdWillShow() {
+        if kbdDismissTapGesture == nil {
+            kbdDismissTapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKbd))
+            kbdDismissTapGesture?.cancelsTouchesInView = false
+            self.view.addGestureRecognizer(kbdDismissTapGesture!)
+        }
+    }
+    @objc private func kbdWillHide() {
+        if kbdDismissTapGesture != nil {
+            self.view.removeGestureRecognizer(kbdDismissTapGesture!)
+            kbdDismissTapGesture = nil
+        }
+    }
+    @objc private func dismissKbd() {
+        setValueNameHabit()
+    }
     
     private func setTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openColorPicker))
@@ -232,22 +268,24 @@ class HabitViewController: UIViewController {
     }
 
     @objc func setTime() {
+        if kbdDismissTapGesture != nil {
+            self.view.removeGestureRecognizer(kbdDismissTapGesture!)
+            kbdDismissTapGesture = nil
+            setValueNameHabit()
+        }
         let dateformatter = DateFormatter()
         dateformatter.timeStyle = .short
         textFieldTime.text = dateformatter.string(from: timePicker.date)
         self.date = timePicker.date
         timeText = dateformatter.string(from: timePicker.date)
     }
-   
+    
+
     private func setLayout() {
         view.addSubview(scrollView)
         view.addSubview(buttonDelete)
         
-        var insetButtom: CGFloat = 40
-        if device == 1 {
-            insetButtom = 70
-        }
-        
+        let insetButtom: CGFloat = 50
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -306,8 +344,8 @@ class HabitViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             textFieldTime.leadingAnchor.constraint(equalTo: labelTextTime.trailingAnchor, constant: 8),
-            textFieldTime.topAnchor.constraint(equalTo: labelTime.bottomAnchor, constant: 7),
-            textFieldTime.heightAnchor.constraint(equalToConstant: 30)
+            textFieldTime.topAnchor.constraint(equalTo: labelTime.bottomAnchor, constant: 7)
+//            textFieldTime.heightAnchor.constraint(equalToConstant: 30)
         ])
         NSLayoutConstraint.activate([
             timePicker.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 16),
