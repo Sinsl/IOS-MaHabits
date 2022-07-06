@@ -27,6 +27,7 @@ class HabitDetailsViewController: UIViewController, HabitDetailsViewControllerDe
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = AppColor(color: .grey)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(DetailsTableViewCell.self, forCellReuseIdentifier: DetailsTableViewCell.identifier)
@@ -36,7 +37,7 @@ class HabitDetailsViewController: UIViewController, HabitDetailsViewControllerDe
     
     private let headerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = AppColor(color: .grey)
         view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
         return view
     }()
@@ -66,9 +67,12 @@ class HabitDetailsViewController: UIViewController, HabitDetailsViewControllerDe
         super.viewDidLoad()
         
         self.title = habit?.name
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = AppColor(color: .grey)
         navigationItem.largeTitleDisplayMode = .never
         self.navigationController?.navigationBar.tintColor = AppColor(color: .purple)
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = AppColor(color: .navBarGrey)
+        navigationController?.view.backgroundColor = AppColor(color: .navBarGrey)
         let edit = UIBarButtonItem(title: "Править", style: .plain, target: self, action: #selector(openEdit))
         navigationItem.rightBarButtonItem = edit
         setLayout()

@@ -44,6 +44,8 @@ class InfoViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = AppColor(color: .navBarGrey)
+        self.navigationController?.view.backgroundColor = AppColor(color: .navBarGrey)
         self.view.backgroundColor = .white
         setLayout()
     }

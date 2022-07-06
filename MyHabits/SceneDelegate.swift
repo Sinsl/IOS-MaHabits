@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: ws.coordinateSpace.bounds)
         window?.windowScene = ws
-        window?.tintColor = .purple
+        window?.tintColor = AppColor(color: .purple)
         window?.rootViewController = createTabBarController()
         window?.makeKeyAndVisible()
     }
@@ -38,7 +38,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func createTabBarController() -> UITabBarController {
         let tabBarController = UITabBarController()
         UITabBar.appearance().isTranslucent = false
-        UITabBar.appearance().barTintColor = .systemGray6
+        UITabBar.appearance().barTintColor = AppColor(color: .tapBarGrey)
+        UITabBar.appearance().backgroundColor = AppColor(color: .tapBarGrey)
         tabBarController.viewControllers = [createHabitsViewController(), createInfoViewController()]
         return tabBarController
     }

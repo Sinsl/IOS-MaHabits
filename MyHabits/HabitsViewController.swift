@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol HabitsViewControllerDelegate: class {
+protocol HabitsViewControllerDelegate: AnyObject {
     func update(text: String)
 }
 
@@ -25,7 +25,7 @@ class HabitsViewController: UIViewController, HabitsViewControllerDelegate {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemGray5
+        view.backgroundColor = AppColor(color: .grey)
         view.dataSource = self
         view.delegate = self
         view.register(HabitsCollectionViewCell.self, forCellWithReuseIdentifier: HabitsCollectionViewCell.identifier)
@@ -39,7 +39,10 @@ class HabitsViewController: UIViewController, HabitsViewControllerDelegate {
         
         self.title = "Сегодня"
         navigationController?.navigationBar.prefersLargeTitles = true
-        view.backgroundColor = .systemGray6
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = AppColor(color: .navBarGrey)
+        navigationController?.view.backgroundColor = AppColor(color: .navBarGrey)
+        view.backgroundColor = .white
         let info = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(openInfo))
         navigationItem.rightBarButtonItem = info
         setLayout()

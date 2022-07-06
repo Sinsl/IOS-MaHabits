@@ -139,6 +139,7 @@ class HabitViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        navigationController?.navigationBar.backgroundColor = AppColor(color: .navBarGrey)
         setValue()
         setNavBar()
         setLayout()
