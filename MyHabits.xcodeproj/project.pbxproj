@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		F4F632942825108200373B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632932825108200373B2B /* AppDelegate.swift */; };
 		F4F632962825108200373B2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632952825108200373B2B /* SceneDelegate.swift */; };
-		F4F632982825108200373B2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632972825108200373B2B /* ViewController.swift */; };
-		F4F6329B2825108200373B2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F632992825108200373B2B /* Main.storyboard */; };
 		F4F6329D2825108900373B2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F6329C2825108900373B2B /* Assets.xcassets */; };
 		F4F632A02825108900373B2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F6329E2825108900373B2B /* LaunchScreen.storyboard */; };
+		F4F632AC2825149300373B2B /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632AB2825149300373B2B /* HabitsViewController.swift */; };
+		F4F632AF282514D600373B2B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632AE282514D600373B2B /* InfoViewController.swift */; };
+		F4F632B3282519E500373B2B /* ExtensionAppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632B2282519E500373B2B /* ExtensionAppColor.swift */; };
+		F4F632B72825244F00373B2B /* HabitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632B62825244F00373B2B /* HabitsCollectionViewCell.swift */; };
+		F4F632BA282524DA00373B2B /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632B9282524DA00373B2B /* HabitsStore.swift */; };
+		F4F632BE2825279A00373B2B /* ProgressBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632BD2825279A00373B2B /* ProgressBarCollectionViewCell.swift */; };
+		F4F632C12825286600373B2B /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632C02825286600373B2B /* HabitViewController.swift */; };
+		F4F632C4282528CA00373B2B /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632C3282528CA00373B2B /* HabitDetailsViewController.swift */; };
+		F4F632CB282529B800373B2B /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F632CA282529B800373B2B /* DetailsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F4F632902825108200373B2B /* MyHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F632932825108200373B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F632952825108200373B2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F4F632972825108200373B2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F4F6329A2825108200373B2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4F6329C2825108900373B2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4F6329F2825108900373B2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4F632A12825108900373B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4F632AB2825149300373B2B /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		F4F632AE282514D600373B2B /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		F4F632B2282519E500373B2B /* ExtensionAppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAppColor.swift; sourceTree = "<group>"; };
+		F4F632B62825244F00373B2B /* HabitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4F632B9282524DA00373B2B /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsStore.swift; sourceTree = "<group>"; };
+		F4F632BD2825279A00373B2B /* ProgressBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4F632C02825286600373B2B /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
+		F4F632C3282528CA00373B2B /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
+		F4F632CA282529B800373B2B /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +51,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4A7824D283254AA005198E7 /* HabitsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F4F632AB2825149300373B2B /* HabitsViewController.swift */,
+				F4F632B62825244F00373B2B /* HabitsCollectionViewCell.swift */,
+				F4F632BD2825279A00373B2B /* ProgressBarCollectionViewCell.swift */,
+			);
+			name = HabitsScreen;
+			sourceTree = "<group>";
+		};
+		F4A7824E283254D3005198E7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F4F632B2282519E500373B2B /* ExtensionAppColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F4A7824F28325504005198E7 /* DetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F4F632C3282528CA00373B2B /* HabitDetailsViewController.swift */,
+				F4F632CA282529B800373B2B /* DetailsTableViewCell.swift */,
+			);
+			name = DetailsScreen;
+			sourceTree = "<group>";
+		};
+		F4A7825228325594005198E7 /* InfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F4F632AE282514D600373B2B /* InfoViewController.swift */,
+			);
+			name = InfoScreen;
+			sourceTree = "<group>";
+		};
+		F4A78253283255B2005198E7 /* HabitScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F4F632C02825286600373B2B /* HabitViewController.swift */,
+			);
+			path = HabitScreen;
+			sourceTree = "<group>";
+		};
 		F4F632872825108200373B2B = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +113,14 @@
 		F4F632922825108200373B2B /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
+				F4A7824D283254AA005198E7 /* HabitsScreen */,
+				F4A7824F28325504005198E7 /* DetailsScreen */,
+				F4A78253283255B2005198E7 /* HabitScreen */,
+				F4A7825228325594005198E7 /* InfoScreen */,
+				F4A7824E283254D3005198E7 /* Extension */,
 				F4F632932825108200373B2B /* AppDelegate.swift */,
 				F4F632952825108200373B2B /* SceneDelegate.swift */,
-				F4F632972825108200373B2B /* ViewController.swift */,
-				F4F632992825108200373B2B /* Main.storyboard */,
+				F4F632B9282524DA00373B2B /* HabitsStore.swift */,
 				F4F6329C2825108900373B2B /* Assets.xcassets */,
 				F4F6329E2825108900373B2B /* LaunchScreen.storyboard */,
 				F4F632A12825108900373B2B /* Info.plist */,
@@ -126,7 +187,6 @@
 			files = (
 				F4F632A02825108900373B2B /* LaunchScreen.storyboard in Resources */,
 				F4F6329D2825108900373B2B /* Assets.xcassets in Resources */,
-				F4F6329B2825108200373B2B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +197,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4F632982825108200373B2B /* ViewController.swift in Sources */,
+				F4F632B72825244F00373B2B /* HabitsCollectionViewCell.swift in Sources */,
 				F4F632942825108200373B2B /* AppDelegate.swift in Sources */,
 				F4F632962825108200373B2B /* SceneDelegate.swift in Sources */,
+				F4F632C4282528CA00373B2B /* HabitDetailsViewController.swift in Sources */,
+				F4F632BA282524DA00373B2B /* HabitsStore.swift in Sources */,
+				F4F632CB282529B800373B2B /* DetailsTableViewCell.swift in Sources */,
+				F4F632BE2825279A00373B2B /* ProgressBarCollectionViewCell.swift in Sources */,
+				F4F632AC2825149300373B2B /* HabitsViewController.swift in Sources */,
+				F4F632C12825286600373B2B /* HabitViewController.swift in Sources */,
+				F4F632AF282514D600373B2B /* InfoViewController.swift in Sources */,
+				F4F632B3282519E500373B2B /* ExtensionAppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F4F632992825108200373B2B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F4F6329A2825108200373B2B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F4F6329E2825108900373B2B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
